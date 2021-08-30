@@ -22,3 +22,26 @@
 
 ![allTasks.png](./addtask.png)   ![allTasks.png](./submitted.png)
 
+
+
+# Lab27 :
+
+- **Homepage**
+
+
+- homepage with three buttons Lab,Reading and Code Challenge Also Settings button ,when you press in settings button you will go to settings  page, and once the user has entered their username, it should display “{username}’s tasks” above the three task buttons.
+
+
+![5.png](./5.png)      
+
+
+- **settings  page**
+
+![6.png](./6.png)   ![7.png](./7.png)
+
+
+**Task Detail Page** 
+
+
+- each page have taske come from button  hardcoded in home page
+![3.png](./3.png)  ![2.png](./2.png)  ![1.png](./1.png)

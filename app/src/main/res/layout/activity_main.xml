@@ -46,7 +46,60 @@
         android:layout_height="wrap_content"
         android:text="ADD Task" />
 
+
+
 </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="0.5">
+    <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings Page " />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0.5">
+
+        <Button
+
+            android:id="@+id/task1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lab"
+          />
+
+        <Button
+            android:id="@+id/task2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reading"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/task3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code Challenge" />
+    </LinearLayout>
 
 </LinearLayout>
