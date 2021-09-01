@@ -45,3 +45,10 @@
 
 - each page have taske come from button  hardcoded in home page
 ![3.png](./3.png)  ![2.png](./2.png)  ![1.png](./1.png)
+
+
+# Lab28 :
+- using a RecyclerView to displaying Task data
+
+
+![8.png](./8.png)
