@@ -1,6 +1,8 @@
 package com.example.taskmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,7 +11,10 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
    public String textTask ="";
@@ -80,6 +85,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        ArrayList<Task> tasks = new ArrayList<Task>();
+        tasks.add(new Task("Reading","read about RecyclerView ","new"));
+        tasks.add(new Task("Code Challenge","Sort Merge","in progress"));
+        tasks.add(new Task("Lab","RecycleView","complete"));
+
+
+
+        RecyclerView tasksRecyclerView = findViewById(R.id.recycleView);
+        tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        tasksRecyclerView.setAdapter(new TaskAdaptor(tasks));
+
+//        TextView textView = findViewById(R.id.title1);
+//        textView.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                String tt = textView.getText().toString();
+//                Intent goToTask=new Intent(MainActivity.this,TaskDetail.class);
+//                goToTask.putExtra("textTask",tt);
+//                startActivity(goToTask);
+//            }
+//        });
     }
 
     @Override
@@ -91,5 +119,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView instructorNameView = findViewById(R.id.settingsText);
         instructorNameView.setText( userName+ userNameMessage );
+
+
+
     }
+
 }
