@@ -52,3 +52,18 @@
 
 
 ![8.png](./8.png)
+
+
+# Lab 29
+- Add task page
+
+![9.png](./9.png)
+
+- Home Page
+![10.png](./10.png)
+
+
+- Detail Page
+![11.png](./11.png)
+
+

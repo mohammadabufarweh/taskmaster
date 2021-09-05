@@ -3,6 +3,7 @@ package com.example.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,9 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
    public String textTask ="";
+   TaskDataBase appDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        appDatabase =  Room.databaseBuilder(getApplicationContext(), TaskDataBase.class, "taskInfo").allowMainThreadQueries()
+                .build();
 
-        ArrayList<Task> tasks = new ArrayList<Task>();
-        tasks.add(new Task("Reading","read about RecyclerView ","new"));
-        tasks.add(new Task("Code Challenge","Sort Merge","in progress"));
-        tasks.add(new Task("Lab","RecycleView","complete"));
+        List<Task> tasks = appDatabase.taskDao().getAll();
+//        tasks.add(new Task("Reading","read about RecyclerView ","new"));
+//        tasks.add(new Task("Code Challenge","Sort Merge","in progress"));
+//        tasks.add(new Task("Lab","RecycleView","complete"));
 
 
 
@@ -108,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(goToTask);
 //            }
 //        });
+
+
     }
 
     @Override

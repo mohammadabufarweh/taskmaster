@@ -33,7 +33,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Task title" />
+            android:text="title" />
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
@@ -41,14 +41,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="My Task"
+            android:text="title"
             android:layout_marginBottom="30dp"/>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Text Description" />
+            android:text="body" />
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
@@ -56,7 +56,21 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Do something" />
+            android:text="body" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="State" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="State" />
 
     </LinearLayout>
 
@@ -73,11 +87,11 @@
         android:text="ADD TASK"
         android:layout_marginBottom="40dp"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="141dp"
-            android:layout_height="wrap_content"
-            android:text="Total tasks : 0"
-            android:layout_marginLeft="50dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/textView4"-->
+<!--            android:layout_width="141dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Total tasks : 0"-->
+<!--            android:layout_marginLeft="50dp"/>-->
     </LinearLayout>
 </LinearLayout>
