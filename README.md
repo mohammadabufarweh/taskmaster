@@ -67,3 +67,19 @@
 ![11.png](./11.png)
 
 
+# Lab 31
+# Espresso Testing
+
+```java
+  @Test public void testBtnAddTaskAndAllTask(){
+
+        onView(withId(R.id.addTask)).perform(click());
+        Espresso.pressBackUnconditionally();
+        onView(withId(R.id.allTask)).perform(click());
+        
+
+    }
+```
+- in this test , we test the addTask button and allTask button in Home Page
+- Home Page
+![10.png](./10.png)
