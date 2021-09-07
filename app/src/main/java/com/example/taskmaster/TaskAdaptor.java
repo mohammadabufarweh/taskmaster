@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amplifyframework.datastore.generated.model.TaskModel;
 import com.example.taskmaster.R;
 import com.example.taskmaster.Task;
 
@@ -16,9 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskAdaptor extends RecyclerView.Adapter<TaskAdaptor.TaskViweHolder> {
-    List<Task> allTask=new ArrayList<Task>();
+    List<TaskModel> allTask=new ArrayList<TaskModel>();
 
-    public TaskAdaptor(List<Task> allTask) {
+    public TaskAdaptor(List<TaskModel> allTask) {
         this.allTask = allTask;
     }
 
@@ -38,9 +39,9 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskAdaptor.TaskViweHolder
         TextView body = holder.itemView.findViewById(R.id.body);
         TextView state = holder.itemView.findViewById(R.id.state);
 
-        title.setText(holder.task.title);
-        body.setText(holder.task.body);
-        state.setText(holder.task.state);
+        title.setText(holder.task.getTitle());
+        body.setText(holder.task.getBody());
+        state.setText(holder.task.getState());
     }
 
     @Override
@@ -49,7 +50,7 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskAdaptor.TaskViweHolder
     }
 
     public static class TaskViweHolder extends RecyclerView.ViewHolder {
-        public Task task;
+        public TaskModel task;
         View itemView;
 
         public TaskViweHolder(@NonNull  View itemView) {
@@ -60,9 +61,9 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskAdaptor.TaskViweHolder
                 @Override
                 public void onClick(View view) {
                     Intent goToDetailPageActivity = new Intent(view.getContext(),TaskDetail.class);
-                    goToDetailPageActivity.putExtra("taskTitle",task.title);
-                    goToDetailPageActivity.putExtra("taskBody",task.body);
-                    goToDetailPageActivity.putExtra("taskState",task.state);
+                    goToDetailPageActivity.putExtra("taskTitle",task.getTitle());
+                    goToDetailPageActivity.putExtra("taskBody",task.getBody());
+                    goToDetailPageActivity.putExtra("taskState",task.getState());
                     view.getContext().startActivity(goToDetailPageActivity);
                 }
             });
