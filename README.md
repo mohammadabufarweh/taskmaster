@@ -83,3 +83,16 @@
 - in this test , we test the addTask button and allTask button in Home Page
 - Home Page
 ![10.png](./10.png)
+
+
+# Lab 32
+
+- AWS Amplify is a set of tools and services that can be used together or on their own, to help front-end web and mobile developers build scalable full stack applications, powered by AWS. With Amplify, you can configure app backends and connect your app in minutes, deploy static web apps in a few clicks, and easily manage app content outside the AWS console.
+
+
+* Add Task  Page
+![12.jpeg](./12.jpeg)
+
+* Home  Page
+
+![13.jpeg](./13.jpeg)

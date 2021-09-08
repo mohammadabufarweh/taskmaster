@@ -53,8 +53,13 @@ dependencies {
 
     implementation 'com.amplifyframework:aws-api:1.24.0'
     implementation 'com.amplifyframework:aws-datastore:1.24.0'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+//    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.amplifyframework:core:1.24.0'
-    
+
+//    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+//    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+
+
+
 }

@@ -128,12 +128,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Amplify.API.query(
-                ModelQuery.list(TaskModel.class),
+                ModelQuery.list(com.amplifyframework.datastore.generated.model.TaskModel.class),
                 response -> {
                     for (TaskModel taskModel : response.getData()) {
                         tasks.add(taskModel);
                         Log.i("MyAmplifyApp", taskModel.getTitle());
                     }
+                    handler.sendEmptyMessage(1);
                 },
                 error -> Log.e("MyAmplifyApp", "Query failure", error)
         );
