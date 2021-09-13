@@ -96,3 +96,17 @@
 * Home  Page
 
 ![13.jpeg](./13.jpeg)
+
+
+# Lab 36
+
+- Sign up page
+
+![16.jpeg](./16.jpeg) 
+
+- Sign in page
+![14.jpeg](./14.jpeg)      ![15.jpeg](./15.jpeg) 
+
+- Home Page 
+
+![17.jpeg](./17.jpeg) 
