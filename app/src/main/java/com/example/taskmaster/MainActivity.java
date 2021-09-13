@@ -23,6 +23,10 @@ import android.widget.TextView;
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
 import com.amplifyframework.api.graphql.model.ModelQuery;
+import com.amplifyframework.auth.AuthUser;
+import com.amplifyframework.auth.AuthUserAttributeKey;
+import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
+import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.TaskModel;
 
@@ -40,12 +44,56 @@ public class MainActivity extends AppCompatActivity {
         try {
             // Add these lines to add the AWSApiPlugin plugins
             Amplify.addPlugin(new AWSApiPlugin());
+            Amplify.addPlugin(new AWSCognitoAuthPlugin());
             Amplify.configure(getApplicationContext());
 
             Log.i("MyAmplifyApp", "Initialized Amplify");
         } catch (AmplifyException error) {
             Log.e("MyAmplifyApp", "Could not initialize Amplify", error);
         }
+//// add this in signup page
+//        AuthSignUpOptions options = AuthSignUpOptions.builder()
+//                .userAttribute(AuthUserAttributeKey.email(), "abufarweh34@gmail.com")
+//                .build();
+//        Amplify.Auth.signUp("mohkhaled", "Pass123456", options,
+//                result -> Log.i("AuthQuickStart", "Result: " + result.toString()),
+//                error -> Log.e("AuthQuickStart", "Sign up failed", error)
+//        );
+//        //confarme activity
+//        Amplify.Auth.confirmSignUp(
+//                "mohkhaled",
+//                "the code you received via email",
+//                result -> Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete"),
+//                error -> Log.e("AuthQuickstart", error.toString())
+//        );
+        Amplify.Auth.signInWithWebUI(
+                this,
+                result -> Log.i("AuthQuickStart", result.toString()),
+                error -> Log.e("AuthQuickStart", error.toString())
+        );
+
+        Button signOut = findViewById(R.id.signOut);
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Amplify.Auth.signOut(
+                        () -> Log.i("AuthQuickstart", "Signed out successfully"),
+                        error -> Log.e("AuthQuickstart", error.toString())
+                );
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        recreate();
+                    }
+                }, 2000);
+            }
+        });
+
+
+
+
+
 
         Button allTask = findViewById(R.id.allTask);
         allTask.setOnClickListener(new View.OnClickListener() {
@@ -166,7 +214,19 @@ public class MainActivity extends AppCompatActivity {
         TextView instructorNameView = findViewById(R.id.settingsText);
         instructorNameView.setText( userName+ userNameMessage );
 
-
+        final Handler handlerr = new Handler();
+        handlerr.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                AuthUser authUser;
+                authUser = Amplify.Auth.getCurrentUser();
+                TextView textView = findViewById(R.id.username);
+                String et1 = textView.getText().toString();
+                et1 = authUser.getUsername();
+                System.out.println(authUser.getUsername());
+                textView.setText(et1);
+            }
+        }, 2000);
 
     }
 
