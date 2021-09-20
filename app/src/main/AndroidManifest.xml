@@ -38,6 +38,15 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-    </application>
+
+        <service
+            android:name="AddTask"
+            android:foregroundServiceType="location" >
+        <!-- Any inner elements would go here. -->
+
+    </service>
+
+</application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

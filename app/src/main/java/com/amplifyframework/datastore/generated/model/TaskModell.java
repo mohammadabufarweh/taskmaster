@@ -16,16 +16,16 @@ import com.amplifyframework.core.model.query.predicate.QueryField;
 
 import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 
-/** This is an auto generated class representing the TaskModel type in your schema. */
+/** This is an auto generated class representing the TaskModell type in your schema. */
 @SuppressWarnings("all")
-@ModelConfig(pluralName = "TaskModels")
-public final class TaskModel implements Model {
-  public static final QueryField ID = field("TaskModel", "id");
-  public static final QueryField TITLE = field("TaskModel", "title");
-  public static final QueryField BODY = field("TaskModel", "body");
-  public static final QueryField STATE = field("TaskModel", "state");
-  public static final QueryField LAT = field("TaskModel", "lat");
-  public static final QueryField LON = field("TaskModel", "lon");
+@ModelConfig(pluralName = "TaskModells")
+public final class TaskModell implements Model {
+  public static final QueryField ID = field("TaskModell", "id");
+  public static final QueryField TITLE = field("TaskModell", "title");
+  public static final QueryField BODY = field("TaskModell", "body");
+  public static final QueryField STATE = field("TaskModell", "state");
+  public static final QueryField LAT = field("TaskModell", "lat");
+  public static final QueryField LON = field("TaskModell", "lon");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="String", isRequired = true) String title;
   private final @ModelField(targetType="String") String body;
@@ -66,7 +66,7 @@ public final class TaskModel implements Model {
       return updatedAt;
   }
   
-  private TaskModel(String id, String title, String body, String state, Integer lat, Integer lon) {
+  private TaskModell(String id, String title, String body, String state, Integer lat, Integer lon) {
     this.id = id;
     this.title = title;
     this.body = body;
@@ -82,15 +82,15 @@ public final class TaskModel implements Model {
       } else if(obj == null || getClass() != obj.getClass()) {
         return false;
       } else {
-      TaskModel taskModel = (TaskModel) obj;
-      return ObjectsCompat.equals(getId(), taskModel.getId()) &&
-              ObjectsCompat.equals(getTitle(), taskModel.getTitle()) &&
-              ObjectsCompat.equals(getBody(), taskModel.getBody()) &&
-              ObjectsCompat.equals(getState(), taskModel.getState()) &&
-              ObjectsCompat.equals(getLat(), taskModel.getLat()) &&
-              ObjectsCompat.equals(getLon(), taskModel.getLon()) &&
-              ObjectsCompat.equals(getCreatedAt(), taskModel.getCreatedAt()) &&
-              ObjectsCompat.equals(getUpdatedAt(), taskModel.getUpdatedAt());
+      TaskModell taskModell = (TaskModell) obj;
+      return ObjectsCompat.equals(getId(), taskModell.getId()) &&
+              ObjectsCompat.equals(getTitle(), taskModell.getTitle()) &&
+              ObjectsCompat.equals(getBody(), taskModell.getBody()) &&
+              ObjectsCompat.equals(getState(), taskModell.getState()) &&
+              ObjectsCompat.equals(getLat(), taskModell.getLat()) &&
+              ObjectsCompat.equals(getLon(), taskModell.getLon()) &&
+              ObjectsCompat.equals(getCreatedAt(), taskModell.getCreatedAt()) &&
+              ObjectsCompat.equals(getUpdatedAt(), taskModell.getUpdatedAt());
       }
   }
   
@@ -112,7 +112,7 @@ public final class TaskModel implements Model {
   @Override
    public String toString() {
     return new StringBuilder()
-      .append("TaskModel {")
+      .append("TaskModell {")
       .append("id=" + String.valueOf(getId()) + ", ")
       .append("title=" + String.valueOf(getTitle()) + ", ")
       .append("body=" + String.valueOf(getBody()) + ", ")
@@ -138,7 +138,7 @@ public final class TaskModel implements Model {
    * @return an instance of this model with only ID populated
    * @throws IllegalArgumentException Checks that ID is in the proper format
    */
-  public static TaskModel justId(String id) {
+  public static TaskModell justId(String id) {
     try {
       UUID.fromString(id); // Check that ID is in the UUID format - if not an exception is thrown
     } catch (Exception exception) {
@@ -148,7 +148,7 @@ public final class TaskModel implements Model {
               "creating a new object, use the standard builder method and leave the ID field blank."
       );
     }
-    return new TaskModel(
+    return new TaskModell(
       id,
       null,
       null,
@@ -172,7 +172,7 @@ public final class TaskModel implements Model {
   
 
   public interface BuildStep {
-    TaskModel build();
+    TaskModell build();
     BuildStep id(String id) throws IllegalArgumentException;
     BuildStep body(String body);
     BuildStep state(String state);
@@ -189,10 +189,10 @@ public final class TaskModel implements Model {
     private Integer lat;
     private Integer lon;
     @Override
-     public TaskModel build() {
+     public TaskModell build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
         
-        return new TaskModel(
+        return new TaskModell(
           id,
           title,
           body,

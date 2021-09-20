@@ -5,6 +5,11 @@ subscription OnCreateTaskModel {
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -15,6 +20,11 @@ subscription OnUpdateTaskModel {
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -25,6 +35,11 @@ subscription OnDeleteTaskModel {
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }

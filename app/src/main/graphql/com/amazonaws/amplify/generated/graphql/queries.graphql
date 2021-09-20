@@ -1,10 +1,44 @@
 # this is an auto generated file. This will be overwritten
+query SyncTaskModels(
+  $filter: ModelTaskModelFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncTaskModels(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      title
+      body
+      state
+      lat
+      lon
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
 query GetTaskModel($id: ID!) {
   getTaskModel(id: $id) {
     id
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -20,9 +54,15 @@ query ListTaskModels(
       title
       body
       state
+      lat
+      lon
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
   }
 }
