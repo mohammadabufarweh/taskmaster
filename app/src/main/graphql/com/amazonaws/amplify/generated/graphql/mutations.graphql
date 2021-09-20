@@ -8,6 +8,11 @@ mutation CreateTaskModel(
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -21,6 +26,11 @@ mutation UpdateTaskModel(
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -34,6 +44,11 @@ mutation DeleteTaskModel(
     title
     body
     state
+    lat
+    lon
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }

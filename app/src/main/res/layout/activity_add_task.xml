@@ -85,7 +85,12 @@
         android:layout_height="wrap_content"
         android:text="ADD TASK"
         android:layout_marginBottom="40dp"/>
-
+        <Button
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD location"
+            android:layout_marginBottom="40dp"/>
 <!--        <TextView-->
 <!--            android:id="@+id/textView4"-->
 <!--            android:layout_width="141dp"-->
